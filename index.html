@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image</title>
+    <style>
+        *{
+            margin:0;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div class="image" >
+            <img src="https://img.magnific.com/free-photo/closeup-shot-beautiful-butterfly-orange-petaled-flower_181624-13884.jpg?semt=ais_hybrid&w=740&q=80" id="image" width="100px">
+        </div>
+    </center>
+    <center>
+    <p>Width</p>
+    <input type="range" id="width" min="100" max="1000" value="100" onchange="ApplyChanges('Width')"><p id="w"></p><br>
+    <p>border-radius</p>
+    <input type="range" id="border" min="0" max="100" value="20" onchange="ApplyChanges('br')"><p id="b"></p><br>
+    <p>Blur</p>
+    <input type="range" id="blur" min="0" max="100" value="20" onchange="filter('blur')"><p></p><br>
+     <p>Brightness</p>
+    <input type="range" id="bright" min="0" max="500" value="20" onchange="filter('brightness')"><br><p></p><br>
+     <p>Contrast</p>
+    <input type="range" id="c" min="0" max="500" value="20" onchange="filter('c')"><br><p></p><br>
+     <p>Saturate</p>
+    <input type="range" id="s" min="0" max="500" value="20" onchange="filter('s')"><br><p></p><br>
+    </center>
+    <script>
+       function ApplyChanges(what){
+        if(what=="Width"){
+            let w = document.getElementById("width").value;
+            document.getElementById("image").style.width=w+"px";
+        }
+        if(what=="br"){
+            let w = document.getElementById("border").value;
+            document.getElementById("image").style.borderRadius=w+"px";
+        }
+       }
+       function filter(what){
+         if(what=="blur"){
+            let b = document.getElementById("blur").value;
+            document.getElementById("image").style.filter="blur("+b+"px)";
+         }
+         if(what=="brightness"){
+            let b = document.getElementById("bright").value;
+            document.getElementById("image").style.filter="brightness("+b+"%)";
+         }
+         if(what=="c"){
+            let c = document.getElementById("c").value;
+            document.getElementById("image").style.filter="contrast("+c+"%)";
+         }
+         if(what=="s"){
+            let s = document.getElementById("s").value;
+            document.getElementById("image").style.filter="saturate("+s+"%)";
+         }
+       }
+    </script>
+</body>
+</html>
